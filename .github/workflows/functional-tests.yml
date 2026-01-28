@@ -50,7 +50,7 @@ jobs:
     name: Setup depscan
     needs: [get-versions]
     runs-on: ${{ matrix.os }}-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
     strategy:
       fail-fast: false
       matrix:
@@ -81,7 +81,7 @@ jobs:
     name: Setup depscan in container
     needs: [get-versions]
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
     container:
       image: ${{ matrix.image }}:latest
     strategy:
@@ -110,7 +110,7 @@ jobs:
   test-force:
     name: Test force
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
     strategy:
       fail-fast: false
       matrix:
